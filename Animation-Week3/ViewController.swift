@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var bubbleShake : BubbleShakeView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,9 +19,16 @@ class ViewController: UIViewController {
         bubbleView.fillColor = UIColor.redColor();
         self.view.addSubview(bubbleView);
 
+
+
+        bubbleShake = BubbleShakeView(frame : CGRectMake(100,300,100,100));
+        self.view.addSubview(bubbleShake!);
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func action(sender: AnyObject) {
+        bubbleShake?.addAnimation();
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
